@@ -1,0 +1,23 @@
+<div fxLayout="column">
+  <h1>{{ gameResult }}</h1>
+  <div fxLayout="row" fxLayoutGap="100px" fxLayoutAlign="center center">
+    <div fxFlex="20%">
+      <p>Your choise</p>
+      <img [src]="getImgSrc(playerItem)" alt="" />
+    </div>
+    <div fxFlex="20%">
+      <p>Opponent choise</p>
+      <img [src]="getImgSrc(opponentItem)" alt="" />
+    </div>
+  </div>
+  <button
+    class="btn-play-again"
+    mat-raised-button
+    color="primary"
+    type="button"
+    fxFlexAlign="center"
+    (click)="onPlayAgain()"
+  >
+    Play Again
+  </button>
+</div>

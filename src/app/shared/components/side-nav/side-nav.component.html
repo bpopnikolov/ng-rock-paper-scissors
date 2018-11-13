@@ -1,0 +1,12 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #snav [mode]="side" closed fixedTopGap="56">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>Borislav Popnikolov</mat-card-title>
+        <mat-card-subtitle>JavaScript Full-Stack Developer</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </mat-sidenav>
+  <mat-sidenav-content><ng-content></ng-content></mat-sidenav-content>
+</mat-sidenav-container>

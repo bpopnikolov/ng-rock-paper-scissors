@@ -1,3 +1,13 @@
-<p>
-  layout works!
-</p>
+<div
+  class="layout-container"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutWrap
+  fxLayoutGap="0.5%"
+  fxLayoutAlign="center"
+>
+  <app-navigation fxFlex="100%">
+    <ng-content></ng-content>
+    <!-- <app-footer [socialLinks]="socialLinks"></app-footer> -->
+  </app-navigation>
+</div>

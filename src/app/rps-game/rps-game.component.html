@@ -1,0 +1,28 @@
+<div class="game-container" fxLayout="column" fxLayoutAlign="center center">
+  <app-player-score
+    fxFlex="20%"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    [score]="state.score"
+  ></app-player-score>
+
+  <app-game-result
+    *ngIf="state.gameState === GameState.Finished"
+    [$onPlayAgain]="$onPlayAgain"
+    [playerItem]="state.playerItem"
+    [opponentItem]="state.opponentItem"
+    [gameResult]="state.lastGameResult"
+  ></app-game-result>
+
+  <div
+    *ngIf="state.gameState !== GameState.Finished"
+    fxFlex="80%"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <p>Click and option</p>
+    <app-player-options
+      [$playerSelectedOption]="$playerSelectedOption"
+    ></app-player-options>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="score-container" fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Player</h1>
+    <span class="score" [@scoreChange]="score.opponent">{{
+      score.player
+    }}</span>
+  </div>
+  <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center">
+    <h1>Opponent</h1>
+    <span class="score" [@scoreChange]="score.opponent">{{
+      score.opponent
+    }}</span>
+  </div>
+</div>

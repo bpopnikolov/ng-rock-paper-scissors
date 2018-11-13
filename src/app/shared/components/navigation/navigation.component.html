@@ -1,0 +1,37 @@
+<div class="nav-container" fxLayout="column">
+  <mat-toolbar
+    fxFlex="56px"
+    [ngClass.xs]="{ 'toolbar-mobile': true }"
+    [ngClass.sm]="{ 'toolbar-mobile': true }"
+    class="mat-elevation-z6"
+    color="primary"
+    fxLayout="row"
+  >
+    <a
+      class="sidenav-menu"
+      mat-icon-button
+      fxHide
+      fxShow.xs
+      fxShow.sm
+      (click)="toggleSideNav()"
+    >
+      <mat-icon>menu</mat-icon>
+    </a>
+    <div
+      class="logo-container"
+      [ngStyle.sm]="{ 'margin-left.px': 54 }"
+      [ngStyle.gt-sm]="{ 'margin-left.px': 16 }"
+    >
+      <img class="logo" src="/assets/images/rockpaperscissors.svg" alt="" />
+      <a class="nav-logo-title" href="#">Rock, Paper, Scissors</a>
+    </div>
+    <div class="nav-buttons" fxFlex="100%" fxHide.xs fxHide.sm></div>
+    <div class="spacer" fxHide.xs></div>
+    <a
+      href="https://github.com/bpopnikolov/ng-rock-paper-scissors"
+      class="github-logo"
+      ><img src="/assets/images/GitHub_Logo.png" alt=""
+    /></a>
+  </mat-toolbar>
+  <app-side-nav><ng-content></ng-content></app-side-nav>
+</div>
