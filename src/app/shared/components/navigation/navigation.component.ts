@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SideNavService } from '../side-nav/shared/side-nav.service';
+import { PlayerService } from '../../services/player/player.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,6 +8,7 @@ import { SideNavService } from '../side-nav/shared/side-nav.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  @Input() public playerName: string;
   constructor(private snavService: SideNavService) {}
 
   ngOnInit() {}

@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RpsGameComponent } from './rps-game.component';
 import { GameResultComponent } from './game-result/game-result.component';
+import { CanActivateGameGuard } from '../shared/services/game/game.guard';
 
 const gameRoutes: Routes = [
   {
     path: 'game',
-    component: RpsGameComponent
+    component: RpsGameComponent,
+    canActivate: [CanActivateGameGuard]
   }
 ];
 

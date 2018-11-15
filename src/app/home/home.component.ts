@@ -7,6 +7,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlayerService } from '../shared/services/player/player.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,11 @@ export class HomeComponent implements OnInit {
   public playerInfoForm: FormGroup;
   public playerName: AbstractControl;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private playerService: PlayerService
+  ) {}
 
   public ngOnInit() {
     this.initPlayerNameForm();
@@ -32,6 +37,7 @@ export class HomeComponent implements OnInit {
 
   public onSubmit(): void {
     if (!this.playerInfoForm.invalid) {
+      this.playerService.playerName = this.playerInfoForm.value.playerName;
       this.router.navigate(['/game']);
     }
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../../services/player/player.service';
 
 @Component({
   selector: 'app-layout',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  public playerName: string;
 
-  constructor() { }
+  constructor(private playerService: PlayerService) {}
 
   ngOnInit() {
+    this.playerService.playerNameHasChanged.subscribe(
+      name => (this.playerName = name)
+    );
   }
-
 }

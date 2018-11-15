@@ -6,6 +6,7 @@ import { AppMaterialModule } from 'src/app/app-material';
 import { FooterComponent } from './footer';
 import { SideNavComponent } from './side-nav';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
 
 const COMPONENTS = [
   NavigationComponent,
@@ -16,6 +17,6 @@ const COMPONENTS = [
 @NgModule({
   declarations: COMPONENTS,
   exports: COMPONENTS,
-  imports: [CommonModule, FlexLayoutModule, AppMaterialModule]
+  imports: [CommonModule, FlexLayoutModule, AppMaterialModule, RouterModule]
 })
 export class ComponentsModule {}

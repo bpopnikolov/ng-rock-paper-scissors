@@ -7,14 +7,7 @@
     color="primary"
     fxLayout="row"
   >
-    <a
-      class="sidenav-menu"
-      mat-icon-button
-      fxHide
-      fxShow.xs
-      fxShow.sm
-      (click)="toggleSideNav()"
-    >
+    <a class="sidenav-menu" mat-icon-button (click)="toggleSideNav()">
       <mat-icon>menu</mat-icon>
     </a>
     <div
@@ -23,10 +16,34 @@
       [ngStyle.gt-sm]="{ 'margin-left.px': 16 }"
     >
       <img class="logo" src="/assets/images/rockpaperscissors.svg" alt="" />
-      <a class="nav-logo-title" href="#">Rock, Paper, Scissors</a>
+      <a class="nav-logo-title" [routerLink]="['home']"
+        >Rock, Paper, Scissors</a
+      >
     </div>
-    <div class="nav-buttons" fxFlex="100%" fxHide.xs fxHide.sm></div>
+    <div
+      class="nav-buttons"
+      fxFlex="50%"
+      fxLayout="row"
+      fxHide.xs
+      fxHide.sm
+    ></div>
+    <div class="nav-buttons" fxFlex="100%" fxHide.xs fxHide.sm>
+      <a mat-button [routerLink]="['home']" [routerLinkActive]="'active'"
+        >Home</a
+      >
+      <a mat-button [routerLink]="['game']" [routerLinkActive]="'active'"
+        >Game</a
+      >
+      <a mat-button [routerLink]="['ladder']" [routerLinkActive]="'active'"
+        >Ladder</a
+      >
+    </div>
     <div class="spacer" fxHide.xs></div>
+    <div class="nav-buttons" fxHide.xs fxHide.sm>
+      <ng-template [ngIf]="playerName">
+        <span class="player-text">Welcome, {{ playerName }}</span>
+      </ng-template>
+    </div>
     <a
       href="https://github.com/bpopnikolov/ng-rock-paper-scissors"
       class="github-logo"

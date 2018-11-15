@@ -6,6 +6,8 @@ import { AppMaterialModule } from './app-material';
 import { ContainersModule } from './shared/containers';
 import { HomeModule } from './home/home.module';
 import { RpsGameModule } from './rps-game/rps-game.module';
+import { CanActivateGameGuard } from './shared/services/game/game.guard';
+import { PlayerService } from './shared/services/player/player.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +18,7 @@ import { RpsGameModule } from './rps-game/rps-game.module';
     AppRoutingModule,
     ContainersModule
   ],
-  providers: [],
+  providers: [CanActivateGameGuard, PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
