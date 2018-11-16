@@ -6,7 +6,7 @@ import { CanActivateGameGuard } from '../shared/services/game/game.guard';
 
 const gameRoutes: Routes = [
   {
-    path: 'game',
+    path: '',
     component: RpsGameComponent,
     canActivate: [CanActivateGameGuard]
   }

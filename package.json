@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod",
+    "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
   "dependencies": {
@@ -16,6 +18,7 @@
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
     "@angular/core": "~7.0.0",
+    "@angular/fire": "^5.1.0",
     "@angular/flex-layout": "^7.0.0-beta.19",
     "@angular/forms": "~7.0.0",
     "@angular/http": "~7.0.0",
@@ -23,7 +26,9 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "@types/angularfire": "^0.8.33",
     "core-js": "^2.5.4",
+    "firebase": "^5.5.8",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"

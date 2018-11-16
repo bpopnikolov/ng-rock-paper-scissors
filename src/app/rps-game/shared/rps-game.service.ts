@@ -5,7 +5,7 @@ import { RockPaperScissors } from 'src/app/shared/enums';
 export class RpsGameService {
   constructor() {}
 
-  public doesBear(
+  public doesBeat(
     playerOption: RockPaperScissors,
     opponentOption: RockPaperScissors
   ): any {

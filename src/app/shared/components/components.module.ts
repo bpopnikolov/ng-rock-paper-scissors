@@ -7,7 +7,6 @@ import { FooterComponent } from './footer';
 import { SideNavComponent } from './side-nav';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
-
 const COMPONENTS = [
   NavigationComponent,
   SideNavComponent,

@@ -5,6 +5,10 @@ import { PageNotFoundComponent } from './shared/components/page-not-found';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'game', loadChildren: './rps-game/rps-game.module#RpsGameModule' },
+  {
+    path: 'ladder',
+    loadChildren: './ladder-board/ladder-board.module#LadderBoardModule'
+  },
   { path: 'page-not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/page-not-found' }
 ];
