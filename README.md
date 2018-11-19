@@ -4,7 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --aot` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+#### `Important!` use the --aot flag to start the project. There is a bug with the lazy loading in the current version of angular cli. This is a workaround. You can read more about the issue here: [link](https://github.com/angular/angular/issues/23412#issuecomment-422682849)
+
+## Live Demon
+
+Coming soon...
 
 ## Code scaffolding
 
