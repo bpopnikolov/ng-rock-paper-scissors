@@ -10,7 +10,7 @@ Run `ng serve --aot` for a dev server. Navigate to `http://localhost:4200/`. The
 
 ## Live Demon
 
-Coming soon...
+[Here](https://ngrockpaperscissors.herokuapp.com/)
 
 ## Code scaffolding
 
