@@ -21,7 +21,7 @@ export class PlayersLadderService {
             ? data
                 .sort((a, b) => b.score - a.score)
                 .map((p, i) => {
-                  return { position: i, ...p };
+                  return { position: i + 1, ...p };
                 })
             : [];
         })
