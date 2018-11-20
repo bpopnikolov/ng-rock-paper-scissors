@@ -26,6 +26,7 @@ describe('RpsGameComponent', () => {
   let fixture: ComponentFixture<RpsGameComponent>;
   let service: PlayersLadderService;
   let state = null;
+  let spy = null;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -65,6 +66,7 @@ describe('RpsGameComponent', () => {
     fixture.detectChanges();
     service = TestBed.get(PlayersLadderService);
     state = component.state;
+    spy = spyOn(service, 'addPlayerToLadder');
 
     expect(state.gameState).toEqual(GameState.Waiting);
   });
@@ -83,6 +85,7 @@ describe('RpsGameComponent', () => {
     expect(state.score.opponent).toEqual(0);
     expect(state.gameState).toEqual(GameState.Finished);
     expect(state.lastGameResult).toEqual(GameResult.Win);
+    expect(spy).toHaveBeenCalled();
   });
 
   it('should not get point after a loss', () => {

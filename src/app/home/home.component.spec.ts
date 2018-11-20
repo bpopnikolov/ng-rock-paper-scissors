@@ -51,6 +51,7 @@ describe('HomeComponent', () => {
         ReactiveFormsModule,
         RpsGameModule,
         RouterTestingModule.withRoutes([
+          { path: '', redirectTo: '/home', pathMatch: 'full' },
           ...homeRoutes,
           { path: 'game', component: RpsGameComponent }
         ])
@@ -85,14 +86,31 @@ describe('HomeComponent', () => {
   });
 
   it('should submit valid form', fakeAsync(() => {
-    nameField.setValue('Pesho');
-
+    const dummyName = 'Pesho';
+    const spy = spyOnProperty(service, 'playerName').and.returnValue(dummyName);
+    nameField.setValue(dummyName);
     component.onSubmit();
 
     expect(form.invalid).toBeFalsy();
-    expect(nameField.value).toBe('Pesho');
-    expect(service.playerName).toBe('Pesho');
+    expect(nameField.value).toBe(dummyName);
+    expect(service.playerName).toBe(dummyName);
+    expect(spy).toHaveBeenCalled();
     tick();
     expect(location.path()).toBe('/game');
+  }));
+
+  it('should not submit inavlid form', fakeAsync(() => {
+    const dummyName = '';
+    const spy = spyOnProperty(service, 'playerName').and.returnValue(dummyName);
+    nameField.setValue(dummyName);
+    component.onSubmit();
+
+    expect(form.invalid).toBeTruthy();
+    expect(nameField.value).toBe(dummyName);
+    expect(nameField.hasError('required')).toBeTruthy();
+    expect(spy).not.toHaveBeenCalled();
+    expect(service.playerName).toBeFalsy();
+    tick();
+    expect(location.path()).toBe('');
   }));
 });
